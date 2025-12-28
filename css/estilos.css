@@ -1,3 +1,9 @@
+/* RESET BÁSICO */
+* {
+  box-sizing: border-box;
+}
+
+/* BASE */
 body {
   font-family: Arial, sans-serif;
   margin: 0;
@@ -6,56 +12,44 @@ body {
   color: #ffffff;
 }
 
+/* HEADER */
 header {
   background-color: #062342;
   color: white;
   padding: 60px 20px;
+
   display: flex;
   align-items: center;
   justify-content: space-between;
-}
-
-header h1 {
-  white-space: nowrap;
-  font-size: 56px;
-}
-
-header p {
-  white-space: nowrap;
-  font-size: 28px;
+  gap: 40px;
 }
 
 .texto {
-  max-width: 60%;
   display: flex;
   flex-direction: column;
+  flex: 1;
 }
 
+header h1 {
+  font-size: 56px;
+  margin: 0;
+}
+
+header p {
+  font-size: 28px;
+  margin: 10px 0 0;
+}
+
+/* IMAGEN */
 header img {
+  max-width: 300px;
+  width: 100%;
+  height: auto;
   border-radius: 50%;
   border: 4px solid black;
 }
 
-#about p {
-  color: #f8f8f8;
-}
-
-#skills p {
-  color: #000000;
-}
-
-#skills h3 {
-  color: #000000;
-}
-
-#projects h3 {
-  color: #000000;
-}
-
-#projects p {
-  color: #000000;
-}
-
+/* SECCIONES */
 .container {
   max-width: 1200px;
   margin: 0 auto;
@@ -72,6 +66,7 @@ h2 {
   margin-bottom: 20px;
 }
 
+/* SKILLS Y PROJECTS */
 .skills,
 .projects {
   display: flex;
@@ -82,12 +77,14 @@ h2 {
 .skill,
 .project {
   background-color: white;
+  color: #000;
   padding: 20px;
   border-radius: 8px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   flex: 1 1 300px;
 }
 
+/* FOOTER */
 footer {
   background-color: #333;
   color: white;
@@ -95,35 +92,30 @@ footer {
   padding: 20px;
 }
 
+/* LINKS */
 a {
   color: #007bff;
   text-decoration: none;
 }
 
+/* RESPONSIVE */
 @media (max-width: 768px) {
 
   header {
     flex-direction: column;
     text-align: center;
-  }
-
-  .texto {
-    max-width: 100%;
-    margin-left: 0;
+    padding: 40px 20px;
   }
 
   header h1 {
     font-size: 36px;
-    white-space: normal;
-    /* deja romper línea */
   }
 
   header p {
-    padding: 10px 0;
+    font-size: 18px;
   }
 
   header img {
-    width: 200px;
-    margin-top: 20px;
+    max-width: 200px;
   }
 }
