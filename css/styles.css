@@ -206,16 +206,22 @@ ul {
 .nav-logo {
   display: flex;
   align-items: center;
-  gap: 0.6rem;
+  gap: 0rem;
 }
 
 .logo-icon {
-  width: 100px;
+  width: 60px;
   height: auto;
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #fff;
+  margin-right: -15px;
+}
+
+.logo-icon img {
+  display: block;
+  /* elimina el espacio inline que los img tienen por defecto */
+  width: 100%;
 }
 
 /* Links de navegación */
@@ -1002,9 +1008,12 @@ ul {
 /* Móvil */
 @media (max-width: 640px) {
   .logo-icon {
-    width: 70px;
+    width: 100px;
+    height: auto;
     display: block;
     right: 10rem;
+    margin-right: -20px;
+
 
   }
 
@@ -1018,12 +1027,16 @@ ul {
     /* asegura que sea visible */
     position: fixed;
     /* fija en pantalla */
-    top: 1.5rem;
+    top: 0.5rem;
     /* ajusta la posición vertical */
-    right: 3.1rem;
+    right: 3rem;
     /* pegado a la derecha */
     z-index: 9999;
     /* encima de todo */
+    font-size: 1.2rem;
+    /* agranda el texto */
+    padding: 8px 16px;
+    /* agranda el área clickeable */
   }
 
 
