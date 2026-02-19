@@ -1001,6 +1001,12 @@ ul {
 
 /* Móvil */
 @media (max-width: 640px) {
+  .logo-icon {
+    width: 70px;
+    display: block;
+    right: 10rem;
+
+  }
 
 
   .nav-links {
