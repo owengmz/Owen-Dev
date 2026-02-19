@@ -1001,12 +1001,6 @@ ul {
 
 /* Móvil */
 @media (max-width: 640px) {
-
-
-  .nav-links {
-    display: none;
-  }
-
   .lang-btn {
     display: block;
     /* asegura que sea visible */
@@ -1019,6 +1013,13 @@ ul {
     z-index: 9999;
     /* encima de todo */
   }
+
+
+  .nav-links {
+    display: none;
+  }
+
+
 
   .hamburger {
     display: block;
