@@ -1001,24 +1001,24 @@ ul {
 
 /* Móvil */
 @media (max-width: 640px) {
-  .lang-btn {
-    display: block;
-    /* asegura que sea visible */
-    position: fixed;
-    /* fija en pantalla */
-    top: 1rem;
-    /* ajusta la posición vertical */
-    right: 1rem;
-    /* pegado a la derecha */
-    z-index: 9999;
-    /* encima de todo */
-  }
 
 
   .nav-links {
     display: none;
   }
 
+  .lang-btn {
+    display: block;
+    /* asegura que sea visible */
+    position: fixed;
+    /* fija en pantalla */
+    top: 1.5rem;
+    /* ajusta la posición vertical */
+    right: 3.1rem;
+    /* pegado a la derecha */
+    z-index: 9999;
+    /* encima de todo */
+  }
 
 
   .hamburger {
