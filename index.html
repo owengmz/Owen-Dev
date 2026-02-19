@@ -1,97 +1,367 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es" class="dark">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Perfil Profesional | Heber Gomez</title>
-  <link rel="stylesheet" href="css/estilos.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>OwenDevs | Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Rajdhani:wght@300;400;500;600;700&family=Orbitron:wght@400;700;900&display=swap"
+    rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="css/styles.css" />
 </head>
 
 <body>
-  <main class="container">
 
-    <header>
-      <div class="texto">
-        <h1>Heber Gomez</h1>
-        <p>Estudiante de Desarrollo de Software</p>
+  <!-- Canvas de fondo: circuito PCB animado -->
+  <canvas id="bg-canvas"></canvas>
+
+  <!-- ============================================================
+       NAVEGACIÓN FIJA
+       ============================================================ -->
+  <nav id="navbar">
+    <div class="nav-inner">
+      <!-- Logo -->
+      <a href="#top" class="nav-logo-link">
+        <div class="nav-logo">
+          <div class="logo-icon">
+            <img src="img/Diseño_sin_título-removebg-preview.png" alt="">
+          </div>
+          <span class="logo-text">OWEN<span class="accent">.DEV</span></span>
+        </div>
+      </a>
+
+
+      <!-- Links escritorio -->
+      <ul class="nav-links">
+        <li><a href="#about" data-en="About" data-es="Sobre Mí">About</a></li>
+        <li><a href="#stack" data-en="Stack" data-es="Stack">Stack</a></li>
+        <li><a href="#projects" data-en="Projects" data-es="Proyectos">Projects</a></li>
+        <li><a href="#education" data-en="Education" data-es="Educación">Education</a></li>
+        <li>
+          <!-- Botón de idioma EN/ES -->
+          <button class="lang-btn" id="langToggle">
+            <span class="lang-en accent">EN</span>
+            <span class="sep">/</span>
+            <span class="lang-es">ES</span>
+          </button>
+        </li>
+        <li><a href="mailto:contact@owendev.io" class="btn-contact" data-en="Contact" data-es="Contacto">Contact</a>
+        </li>
+      </ul>
+
+      <!-- Hamburguesa móvil -->
+      <button class="hamburger" id="hamburger" aria-label="Abrir menú">
+        <span class="material-symbols-outlined">menu</span>
+      </button>
+    </div>
+
+    <!-- Menú móvil -->
+    <div class="mobile-menu" id="mobile-menu">
+      <a href="#about" data-en="About" data-es="Sobre Mí">About</a>
+      <a href="#stack">Stack</a>
+      <a href="#projects" data-en="Projects" data-es="Proyectos">Projects</a>
+      <a href="#education" data-en="Education" data-es="Educación">Education</a>
+      <a href="mailto:contact@owendev.io" data-en="Contact" data-es="Contacto">Contact</a>
+    </div>
+  </nav>
+
+  <!-- ============================================================
+       HERO
+       ============================================================ -->
+  <section id="hero">
+    <div class="hero-content">
+
+      <div class="badge">
+        <span class="ping-dot"></span>
+        <span data-en="AVAILABLE FOR INTERNSHIPS" data-es="DISPONIBLE PARA PRÁCTICAS">AVAILABLE FOR INTERNSHIPS</span>
       </div>
 
-      <img id="foto" src="img/perfil.png" alt="Foto de perfil de Heber Gomez">
-    </header>
+      <h1 class="hero-title">
+        <span data-en="Hi, I'm" data-es="Hola, soy">Hi, I'm</span>
+        <span class="gradient-text">Owen Dev</span>
+      </h1>
 
-
-
-    <section id="about">
-      <h2>Sobre mí</h2>
-      <p>
-        Estudiante de Desarrollo de Software con interés en el desarrollo web y la resolución de problemas.
-        Actualmente formándome en tecnologías front-end y back-end, con el objetivo de insertarme
-        profesionalmente en el sector IT.
+      <p class="hero-sub">
+        <span data-en="Software Development Student building"
+          data-es="Estudiante de Desarrollo de Software creando">Software Development Student building</span>
+        <strong data-en="modern digital experiences" data-es="experiencias digitales modernas">modern digital
+          experiences</strong>
+        <span data-en="with scalable code and clean design." data-es="con código escalable y diseño limpio.">with
+          scalable code and clean design.</span>
       </p>
-    </section>
 
-    <section id="skills">
-      <h2>Habilidades</h2>
-
-      <div class="skills">
-        <article class="skill">
-          <h3>Desarrollo Web</h3>
-          <p>HTML, CSS, JavaScript y diseño responsive.</p>
-        </article>
-
-        <article class="skill">
-          <h3>Programación</h3>
-          <p>Java orientado a objetos y fundamentos de lógica.</p>
-        </article>
-
-        <article class="skill">
-          <h3>Bases de Datos</h3>
-          <p>Conceptos de SQL y modelado básico.</p>
-        </article>
+      <div class="hero-actions">
+        <button class="btn-primary">
+          <span class="material-symbols-outlined">download</span>
+          <span data-en="Download CV" data-es="Descargar CV">Download CV</span>
+        </button>
+        <button class="btn-ghost" data-en="View Projects" data-es="Ver Proyectos">View Projects</button>
       </div>
-    </section>
+    </div>
 
-    <section id="projects">
-      <h2>Proyectos</h2>
+    <!-- Esquinas HUD decorativas -->
+    <div class="hud-corner tl"></div>
+    <div class="hud-corner tr"></div>
+    <div class="hud-corner bl"></div>
+    <div class="hud-corner br"></div>
+  </section>
 
-      <div class="projects">
-        <article class="project">
-          <h3>Proyecto 1</h3>
-          <p>
-            Proyecto académico en Java Swing donde implementé una interfaz de login con validación y manejo de eventos.
-            Enfocado en lógica, UI y estructura del código.
-            <a href="https://github.com/owengmz/java-swing-login-ui.git" target="_blank">Ver más</a>
-          </p>
-        </article>
+  <!-- ============================================================
+       ABOUT
+       ============================================================ -->
+  <section id="about" class="section-alt">
+    <div class="container grid-2col">
 
-        <article class="project">
-          <h3>Proyecto 2</h3>
-          <p>
-            Java Swing Temperature Converter
-
-            Proyecto académico desarrollado en Java Swing como parte de mi formación en Desarrollo de Software.
-            Implementa una interfaz gráfica para convertir temperaturas entre distintas unidades, con validación de
-            datos y manejo de errores.
-            <a href="https://github.com/owengmz/java-swing-temperature-converter.git" target="_blank">Ver más</a>
-          </p>
-        </article>
+      <!-- Foto de perfil -->
+      <div class="profile-wrap">
+        <div class="profile-glow"></div>
+        <img src="/img/Generated Image February 18, 2026 - 9_08PM.png" alt="Foto de perfil" class="profile-img" />
       </div>
-    </section>
 
-    <section id="contact">
-      <h2>Contacto</h2>
-      <p>Email: <a href="mailto:heber12398@gmail.com">heber12398@gmail.com</a></p>
-      <p>LinkedIn: <a href="https://www.linkedin.com/in/heber-gomez-b12a8ba6" target="_blank">Ver perfil</a></p>
-      <p>GitHub: <a href="https://github.com/owengmz" target="_blank">Ver Repositorio</a></p>
-    </section>
+      <!-- Texto -->
+      <div class="about-text">
+        <div class="section-label">
+          <span class="line"></span>
+          <span data-en="About Me" data-es="Sobre Mí">About Me</span>
+        </div>
 
-  </main>
+        <h2>
+          <span data-en="Turning logic into" data-es="Convirtiendo lógica en">Turning logic into</span>
+          <br /><span class="accent" data-en="aesthetic digital reality." data-es="realidad digital estética.">aesthetic
+            digital reality.</span>
+        </h2>
 
-  <footer>
-    <p>&copy; 2025 Heber Gomez. Todos los derechos reservados.</p>
+        <p data-en="I'm a third-year Software Development student with a deep fascination for full-stack architecture and UI/UX engineering. I spend my time bridging the gap between robust backend logic and fluid user interfaces."
+          data-es="Soy estudiante de tercer año de Desarrollo de Software con una profunda fascinación por la arquitectura full-stack y la ingeniería UI/UX. Dedico mi tiempo a unir la lógica del backend con interfaces de usuario fluidas.">
+          I'm a third-year Software Development student with a deep fascination for
+          full-stack architecture and UI/UX engineering. I spend my time bridging the
+          gap between robust backend logic and fluid user interfaces.
+        </p>
+
+        <div class="stats-grid">
+          <div class="glass-card stat-card">
+            <span class="stat-number accent">15+</span>
+            <p data-en="Projects Completed" data-es="Proyectos Completados">Projects Completed</p>
+          </div>
+          <div class="glass-card stat-card">
+            <span class="stat-number accent">3.9</span>
+            <p data-en="Current GPA" data-es="Promedio Actual">Current GPA</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ============================================================
+       TECH STACK
+       ============================================================ -->
+  <section id="stack">
+    <div class="container">
+
+      <div class="section-header">
+        <h2 data-en="Tech Arsenal" data-es="Arsenal Tecnológico">Tech Arsenal</h2>
+        <p data-en="The tools I use to bring ideas to life"
+          data-es="Las herramientas que uso para dar vida a mis ideas">The tools I use to bring ideas to life</p>
+      </div>
+
+      <div class="tech-grid">
+        <div class="tech-chip glass-card"><span class="material-symbols-outlined accent">HTML</span><span>HTML</span>
+        </div>
+        <div class="tech-chip glass-card"><span
+            class="material-symbols-outlined accent">javascript</span><span>JavaScript</span></div>
+        <div class="tech-chip glass-card"><span class="material-symbols-outlined accent">CSS</span><span>CSS</span>
+        </div>
+        <div class="tech-chip glass-card"><span
+            class="material-symbols-outlined accent">database</span><span>MySQL</span></div>
+        <div class="tech-chip glass-card"><span class="material-symbols-outlined accent">java</span><span>java</span>
+        </div>
+        <div class="tech-chip glass-card"><span class="material-symbols-outlined accent">gite</span><span>Git /
+            GitHub</span></div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ============================================================
+       PROYECTOS
+       ============================================================ -->
+  <section id="projects" class="section-alt">
+    <div class="container">
+
+      <div class="projects-header">
+        <div>
+          <h2 data-en="Featured Projects" data-es="Proyectos Destacados">Featured Projects</h2>
+          <p data-en="Selected work from my academic and personal journey"
+            data-es="Trabajo selecto de mi trayectoria académica y personal">Selected work from my academic and personal
+            journey</p>
+        </div>
+        <button class="view-archive">
+          <span data-en="View Archive" data-es="Ver Archivo">View Archive</span>
+          <span class="material-symbols-outlined">arrow_forward</span>
+        </button>
+      </div>
+
+      <div class="projects-grid">
+
+        <!-- Proyecto 1 -->
+        <article class="project-card glass-card">
+          <div class="card-img-wrap">
+            <img
+              src="https://lh3.googleusercontent.com/aida-public/AB6AXuCv_FQm8nj3oPQVxUD65Gt_g1sC61zDLxiyNKJvXr3WqTTFV4GuWWoEPl6Uqc-M-QISc3xfs3N2dfVIZlUXoijseLDgEHDaRC27HtFAQd5nDEthoT3sfTA9briKqQTYm3h4jEjay83AZOJKSTyjWLvIeloxI1Ox_ea9PQA2JDjavq-oI18V77iNk3PDCk-50aeVs3g8dVfMS_WzUxH7GTyv_gp3biAytHfW_KrjpYEe-uq91701K_P0PxkMolBznBP5YJZjtGDQHvE"
+              alt="E-commerce dashboard" />
+          </div>
+          <div class="card-body">
+            <h3>E-commerce Engine</h3>
+            <p data-en="A high-performance marketplace platform with real-time inventory and Stripe integration."
+              data-es="Plataforma de marketplace de alto rendimiento con inventario en tiempo real e integración con Stripe.">
+              A high-performance marketplace platform with real-time inventory and Stripe integration.
+            </p>
+            <div class="tag-list">
+              <span class="tag">NEXT.JS</span><span class="tag">PRISMA</span><span class="tag">TS</span>
+            </div>
+            <div class="card-links">
+              <a href="#" aria-label="Demo"><span class="material-symbols-outlined">link</span></a>
+              <a href="#" aria-label="Código"><span class="material-symbols-outlined">code</span></a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Proyecto 2 -->
+        <article class="project-card glass-card">
+          <div class="card-img-wrap">
+            <img
+              src="https://lh3.googleusercontent.com/aida-public/AB6AXuABppN4tgu0BcXlOOnHu0hcgyEmM7gTdTU6pNw8YpH_VtYWpNI4VAX5BLYGGi1Qi9n_QdrJAymUwmv9wkCder8JFNmCbcFe3X9JNZarDDMh8cRlURdDJ2jtqwe81XGCdmIuGUh9L6e5Xxa42AIPaRZtcLoobE_wdGT6BBnHeNqJzCRsngV2FWnu9PPzKQ3YLymLeyjEBj6SmWE9uTZIPhg69B8pvkEvY_dMg30rl45NQHxJBhz1A5LzPJQ3qBvj6nGY9wZI3u6Zkzg"
+              alt="Visualizador de algoritmos" />
+          </div>
+          <div class="card-body">
+            <h3>Algorithm Visualizer</h3>
+            <p data-en="Interactive web tool to visualize complex sorting and pathfinding algorithms in real-time."
+              data-es="Herramienta web interactiva para visualizar algoritmos de ordenamiento y rutas en tiempo real.">
+              Interactive web tool to visualize complex sorting and pathfinding algorithms in real-time.
+            </p>
+            <div class="tag-list">
+              <span class="tag">REACT</span><span class="tag">CANVAS</span><span class="tag">FRAMER</span>
+            </div>
+            <div class="card-links">
+              <a href="#" aria-label="Demo"><span class="material-symbols-outlined">link</span></a>
+              <a href="#" aria-label="Código"><span class="material-symbols-outlined">code</span></a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Proyecto 3 -->
+        <article class="project-card glass-card">
+          <div class="card-img-wrap">
+            <img
+              src="https://lh3.googleusercontent.com/aida-public/AB6AXuD4KRr0ps_KMrW1y7tifdvpXK_u72dcJtpAZ59sb4gfPLxBKtNxZO-tSkTK1yNUmg9oZVcj9EsJpix_FkGahFld-oeQRV0iJv7W3ibgPim-YbDllkrGEtJVwF4L9wGAkvs0wujgywYmRZnbyvcR_grfLyu6E42i5OqAKsXPPQGdy5jb8WL8vkChkS8gZrS07UtzH2mYeGxGN_N9T77Ld_6L_85ofki3sxvuBTzwVMqRTBcYk-Q_JRhqtPsKE18_qWwA4KYSvDUsfOA"
+              alt="Bot del clima" />
+          </div>
+          <div class="card-body">
+            <h3>Weather API Bot</h3>
+            <p data-en="Automated discord bot providing hyper-local weather alerts and satellite imagery forecasts."
+              data-es="Bot de Discord automatizado que provee alertas meteorológicas locales y pronósticos con imágenes satelitales.">
+              Automated discord bot providing hyper-local weather alerts and satellite imagery forecasts.
+            </p>
+            <div class="tag-list">
+              <span class="tag">PYTHON</span><span class="tag">REDIS</span><span class="tag">DOCKER</span>
+            </div>
+            <div class="card-links">
+              <a href="#" aria-label="Demo"><span class="material-symbols-outlined">link</span></a>
+              <a href="#" aria-label="Código"><span class="material-symbols-outlined">code</span></a>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       EDUCACIÓN
+       ============================================================ -->
+  <section id="education">
+    <div class="container">
+
+      <div class="section-header">
+        <h2 data-en="Academic Background" data-es="Formación Académica">Academic Background</h2>
+      </div>
+
+      <div class="timeline">
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="glass-card timeline-card">
+            <div class="timeline-head">
+              <h3 data-en="University of Technology" data-es="Universidad de Tecnología">University of Technology</h3>
+              <span class="timeline-badge" data-en="2021 — PRESENT" data-es="2021 — PRESENTE">2021 — PRESENT</span>
+            </div>
+            <h4 data-en="B.Sc. in Software Engineering" data-es="Ing. en Desarrollo de Software">B.Sc. in Software
+              Engineering</h4>
+            <p data-en="Focusing on Distributed Systems, AI Ethics, and Advanced Web Architecture. Expected graduation: May 2025."
+              data-es="Especialización en Sistemas Distribuidos, Ética en IA y Arquitectura Web Avanzada. Graduación esperada: Mayo 2025.">
+              Focusing on Distributed Systems, AI Ethics, and Advanced Web Architecture.
+              Expected graduation: May 2025.
+            </p>
+            <div class="honors">
+              <span class="material-symbols-outlined">military_tech</span>
+              <span data-en="Dean's List Honoree for 5 consecutive semesters"
+                data-es="Lista de Honor del Decano por 5 semestres consecutivos">
+                Dean's List Honoree for 5 consecutive semesters
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ============================================================
+       FOOTER
+       ============================================================ -->
+  <footer id="footer">
+    <div class="container footer-inner">
+
+      <div class="footer-logo">
+        <div class="logo-icon">
+          <img src="img/Diseño_sin_título-removebg-preview.png" alt="">
+        </div>
+        <span class="logo-text">OWEN<span class="accent">.DEV</span></span>
+      </div>
+
+      <div class="social-links">
+        <a href="#" class="social-btn glass-card" aria-label="GitHub">
+          <svg viewBox="0 0 24 24" fill="currentColor">
+            <path
+              d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.041-1.61-4.041-1.61-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
+          </svg>
+        </a>
+        <a href="#" class="social-btn glass-card" aria-label="LinkedIn">
+          <svg viewBox="0 0 24 24" fill="currentColor">
+            <path
+              d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
+          </svg>
+        </a>
+        <a href="mailto:contact@owendev.io" class="social-btn glass-card" aria-label="Email">
+          <span class="material-symbols-outlined">mail</span>
+        </a>
+      </div>
+
+      <p class="footer-copy"
+        data-en="© 2025 Owen Dev. Designed with glassmorphism and modern tech for the next generation of software enthusiasts."
+        data-es="© 2025 Owen Dev. Diseñado con glassmorphism y tecnología moderna para la próxima generación de entusiastas del software.">
+        © 2025 Owen Dev. Designed with glassmorphism and modern tech for the next generation of software enthusiasts.
+      </p>
+
+    </div>
   </footer>
 
+  <script src="JS/script.js"></script>
 </body>
 
 </html>
